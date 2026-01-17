@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-jobs',
-    imports: [CommonModule, ReactiveFormsModule, FormsModule],
+    imports: [ReactiveFormsModule, FormsModule],
     templateUrl: './jobs.component.html',
     styleUrl: './jobs.component.css'
 })
