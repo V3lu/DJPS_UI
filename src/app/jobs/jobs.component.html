@@ -10,12 +10,14 @@
       <div id="panel">
         <img src="assets/images/trybiglogo.png" alt="logo">
         <br>
-        <input type="number" [value]="jobLength">
-        <button class="button is-primary" (click)="StartJob()">Start Job</button>
+        <form>
+          <input type="number" [value]="jobLength">
+          <button class="button is-primary" (click)="StartJob()">Start Job</button>
+        </form>
+        <mat-progress-bar mode="determinate" [value]="progressBarValue"></mat-progress-bar>
       </div>
     </div>
     <div class="column">
-
     </div>
     <div class="column">
       
