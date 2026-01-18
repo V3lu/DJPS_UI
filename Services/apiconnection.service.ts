@@ -9,6 +9,10 @@ export class APIConnectionService {
   constructor(private http: HttpClient) { }
 
   StartJob(jobLength: number) {
-    return this.http.post<any>('https://localhost:7277/api/jobs/testcomm', jobLength); 
+    return this.http.post('https://localhost:7277/api/jobs/testcomm', jobLength, {
+      observe: 'events',
+      reportProgress: true,
+      responseType: 'text'
+    });
   }
 }

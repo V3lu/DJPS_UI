@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { APIConnectionService } from '../../../Services/apiconnection.service';
+import { HttpEventType } from '@angular/common/http';
 
 @Component({
     selector: 'app-jobs',
@@ -15,7 +16,16 @@ export class JobsComponent {
   constructor(private apiConnectionService: APIConnectionService) { }
 
   
-  async StartJob() {
-    this.apiConnectionService.StartJob(this.jobLength).subscribe();
-  }
+  StartJob() {
+  this.apiConnectionService.StartJob(this.jobLength).subscribe({
+    next: (event: any) => {
+      if (event.type === HttpEventType.DownloadProgress) {
+        console.log('Current stream buffer:', event.partialText);
+      } else if (event.type === HttpEventType.Response) {
+        console.log('Full stream finished:', event.body);
+      }
+    },
+    error: (err) => console.error(err)
+  });
+}
 }
