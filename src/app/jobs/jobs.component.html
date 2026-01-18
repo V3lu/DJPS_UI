@@ -11,10 +11,16 @@
         <img src="assets/images/trybiglogo.png" alt="logo">
         <br>
         <form>
-          <input type="number" [value]="jobLength" id="inputJobLength">
-          <button class="button is-primary" (click)="StartJob()">Start Job</button>
+          <input type="number" [value]="jobLength1" id="inputJobLength1">
+          <button class="button is-primary" (click)="StartJob1()">Start Job</button>
         </form>
-        <mat-progress-bar mode="determinate" [value]="progressBarValue"></mat-progress-bar>
+        <mat-progress-bar mode="determinate" [value]="progressBarValue1"></mat-progress-bar>
+        <br><br>
+        <form>
+          <input type="number" [value]="jobLength2" id="inputJobLength2">
+          <button class="button is-primary" (click)="StartJob2()">Start Job</button>
+        </form>
+        <mat-progress-bar mode="determinate" [value]="progressBarValue2"></mat-progress-bar>
       </div>
     </div>
     <div class="column">
