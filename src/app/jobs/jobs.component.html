@@ -11,7 +11,7 @@
         <img src="assets/images/trybiglogo.png" alt="logo">
         <br>
         <form>
-          <input type="number" [value]="jobLength">
+          <input type="number" [value]="jobLength" id="inputJobLength">
           <button class="button is-primary" (click)="StartJob()">Start Job</button>
         </form>
         <mat-progress-bar mode="determinate" [value]="progressBarValue"></mat-progress-bar>
